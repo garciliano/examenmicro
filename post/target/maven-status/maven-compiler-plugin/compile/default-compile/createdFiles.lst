@@ -1,0 +1,6 @@
+mx/post/repositorio/PostRepositorio.class
+mx/post/controlador/PostControlador.class
+mx/post/PostApplication.class
+mx/post/entidad/Post.class
+mx/post/servicio/PostServicio.class
+mx/post/modelo/PostDTO.class

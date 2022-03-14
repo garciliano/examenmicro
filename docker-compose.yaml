@@ -1,0 +1,69 @@
+version: '3.3'
+services:
+  discovery-server-eureka:
+    image: garciliano/discovery-server-eureka:latest
+    ports:
+      - "8761:8761"
+  my-postgres-db:
+#    image: garciliano/base-datos:0.0.1
+ #   environment:
+  #    - POSTGRES_PASSWORD=secret
+   # ports:
+    #  - "5432:5432"
+    build: postgresdb/
+    environment:
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - 5432:5432
+    volumes:
+      - ./blockstorage/postgres:/var/lib/postgresql/data
+  microservicio-persona:
+    image: garciliano/persona:0.0.1-SNAPSHOT
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://my-postgres-db:5432/red_social
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server-eureka:8761/eureka
+    ports:
+      - "8081:8081"
+    depends_on:
+      - my-postgres-db 
+      - discovery-server-eureka  
+  microservicio-amigos:
+    image: garciliano/amigos:0.0.1-SNAPSHOT
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://my-postgres-db:5432/red_social
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server-eureka:8761/eureka
+    ports:
+      - "8082:8082"
+    depends_on:
+      - my-postgres-db
+      - discovery-server-eureka
+  microservicio-libro:
+    image: garciliano/libro:0.0.1-SNAPSHOT
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://my-postgres-db:5432/red_social
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server-eureka:8761/eureka
+    ports:
+      - "8084:8084"
+    depends_on:
+      - my-postgres-db
+      - discovery-server-eureka
+  microservicio-librosfavoritos:
+    image: garciliano/librosfavoritos:0.0.1-SNAPSHOT
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://my-postgres-db:5432/red_social
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server-eureka:8761/eureka
+    ports:
+      - "8085:8085"
+    depends_on:
+      - my-postgres-db
+      - discovery-server-eureka
+  microservicio-post:
+    image: garciliano/post:0.0.1-SNAPSHOT
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://my-postgres-db:5432/red_social
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server-eureka:8761/eureka
+    ports:
+      - "8083:8083"
+    depends_on:
+      - my-postgres-db
+      - discovery-server-eureka

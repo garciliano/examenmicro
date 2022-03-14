@@ -1,0 +1,9 @@
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/entidad/Persona.java
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/controlador/PersonaControlador.java
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/servicio/PersonaServicio.java
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/PersonaApplication.java
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/repositorio/PersonaRepositorio.java
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/modelo/PersonaDTO.java
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/modelo/PostDTO.java
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/servicioOpenFeignClient/PersonaPostServicio.java
+/home/alfredo/Documentos/Adrian Garciliano Jimenez/Examen MicroServicios /persona/src/main/java/mx/persona/servicioOpenFeignClient/PersonaClientFallBack.java

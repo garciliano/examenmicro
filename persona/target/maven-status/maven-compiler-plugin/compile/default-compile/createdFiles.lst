@@ -1,0 +1,9 @@
+mx/persona/servicioOpenFeignClient/PersonaPostServicio.class
+mx/persona/servicioOpenFeignClient/PersonaClientFallBack.class
+mx/persona/controlador/PersonaControlador.class
+mx/persona/modelo/PersonaDTO.class
+mx/persona/entidad/Persona.class
+mx/persona/repositorio/PersonaRepositorio.class
+mx/persona/PersonaApplication.class
+mx/persona/servicio/PersonaServicio.class
+mx/persona/modelo/PostDTO.class
